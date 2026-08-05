@@ -1,0 +1,79 @@
+[
+  {
+    "tipoAuto": "SEDAN",
+    "cantPuertas": 4,
+    "marca": "Hyundai",
+    "modelo": "Santa fe",
+    "anio": 2012,
+    "patente": "DFV565",
+    "estado": "VENDIDO",
+    "combustible": "DIESEL",
+    "tipo": "Auto"
+  },
+  {
+    "tipoAuto": "SEDAN",
+    "cantPuertas": 4,
+    "marca": "Ford",
+    "modelo": "Focus",
+    "anio": 2014,
+    "patente": "GHB445",
+    "estado": "EN_MANTENIMIENTO",
+    "combustible": "GASOLINA",
+    "tipo": "Auto"
+  },
+  {
+    "tipoAuto": "SEDAN",
+    "cantPuertas": 4,
+    "marca": "Ford",
+    "modelo": "Focus",
+    "anio": 2016,
+    "patente": "AXW555",
+    "estado": "DISPONIBLE",
+    "combustible": "GASOLINA",
+    "tipo": "Auto"
+  },
+  {
+    "cilindrada": 250,
+    "tipoMoto": "ENDURO",
+    "marca": "Honda",
+    "modelo": "Xr",
+    "anio": 2022,
+    "patente": "BBC233",
+    "estado": "DISPONIBLE",
+    "combustible": "GASOLINA",
+    "tipo": "Moto"
+  },
+  {
+    "tipoAuto": "SEDAN",
+    "cantPuertas": 4,
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "anio": 2023,
+    "patente": "ABC123",
+    "estado": "DISPONIBLE",
+    "combustible": "GASOLINA",
+    "tipo": "Auto"
+  },
+  {
+    "cilindrada": 110,
+    "tipoMoto": "SCOOTER",
+    "marca": "Honda",
+    "modelo": "Wave",
+    "anio": 2025,
+    "patente": "LLJ988",
+    "estado": "RESERVADO",
+    "combustible": "GASOLINA",
+    "tipo": "Moto"
+  },
+  {
+    "cilindrada": 125,
+    "tipoMoto": "TOURING",
+    "marca": "Yamaha",
+    "modelo": "Fz",
+    "anio": 2022,
+    "patente": "LKO446",
+    "estado": "DISPONIBLE",
+    "combustible": "GASOLINA",
+    "tipo": "Moto"
+  }
+]

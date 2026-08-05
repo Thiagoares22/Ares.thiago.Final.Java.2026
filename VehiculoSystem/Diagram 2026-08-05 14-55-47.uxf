@@ -1,0 +1,174 @@
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLClass</id><coordinates><x>275</x><y>220</y><w>360</w><h>330</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Vehiculo
+implements Comparable&lt;Vehiculo&gt;, Serializable
+--
+#marca: String
+#modelo: String
+#anio: int
+#patente: String
+#estado: EstadoVehiculo
+#combustible: TipoCombustible
+--
++Vehiculo(marca, modelo, anio, patente, estado, combustible)
++Vehiculo(marca, modelo, anio, patente, combustible)
++Vehiculo(marca, modelo, anio, patente)
++getMarca(): String
++setMarca(marca: String): void
++getModelo(): String
++setModelo(modelo: String): void
++getAnio(): int
++setAnio(anio: int): void
++getPatente(): String
++setPatente(patente: String): void
++getEstado(): EstadoVehiculo
++setEstado(estado: EstadoVehiculo): void
++getCombustible(): TipoCombustible
++setCombustible(combustible: TipoCombustible): void
++calcularImpuesto(): double (abstract)
++getTipoVehiculo(): String (abstract)
++compareTo(otro: Vehiculo): int
++equals(obj: Object): boolean
++hashCode(): int
++toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>5</x><y>640</y><w>260</w><h>230</h></coordinates><panel_attributes>Auto
+extends Vehiculo
+implements Exportable
+--
+-tipoAuto: TipoAuto
+-cantPuertas: int
+--
++Auto(marca, modelo, anio, patente, estado, combustible, tipoAuto, cantPuertas)
++Auto(marca, modelo, anio, patente, combustible, tipoAuto, cantPuertas)
++Auto(marca, modelo, anio, patente)
++getTipoAuto(): TipoAuto
++setTipoAuto(tipoAuto: TipoAuto): void
++getCantPuertas(): int
++setCantPuertas(cantPuertas: int): void
++calcularImpuesto(): double
++getTipoVehiculo(): String
++toCSV(): String
++getEncabezadoCSV(): String
++toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>325</x><y>640</y><w>260</w><h>230</h></coordinates><panel_attributes>Camion
+extends Vehiculo
+implements Exportable
+--
+-capacidadCarga: double
+-cantidadEjes: int
+--
++Camion(marca, modelo, anio, patente, estado, combustible, capacidadCarga, cantidadEjes)
++Camion(marca, modelo, anio, patente, combustible, capacidadCarga, cantidadEjes)
++Camion(marca, modelo, anio, patente)
++getCapacidadCarga(): double
++setCapacidadCarga(capacidadCarga: double): void
++getCantidadEjes(): int
++setCantidadEjes(cantidadEjes: int): void
++calcularImpuesto(): double
++getTipoVehiculo(): String
++toCSV(): String
++getEncabezadoCSV(): String
++toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>645</x><y>640</y><w>260</w><h>230</h></coordinates><panel_attributes>Moto
+extends Vehiculo
+implements Exportable
+--
+-cilindrada: int
+-tipoMoto: TipoMoto
+--
++Moto(marca, modelo, anio, patente, estado, combustible, cilindrada, tipoMoto)
++Moto(marca, modelo, anio, patente, combustible, cilindrada, tipoMoto)
++Moto(marca, modelo, anio, patente)
++getCilindrada(): int
++setCilindrada(cilindrada: int): void
++getTipoMoto(): TipoMoto
++setTipoMoto(tipoMoto: TipoMoto): void
++calcularImpuesto(): double
++getTipoVehiculo(): String
++toCSV(): String
++getEncabezadoCSV(): String
++toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>525</x><y>0</y><w>210</w><h>140</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+EstadoVehiculo
+--
+DISPONIBLE
+EN_MANTENIMIENTO
+VENDIDO
+RESERVADO
+--
+-descripcion: String
+--
++getDescripcion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>175</x><y>5</y><w>210</w><h>140</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoCombustible
+--
+GASOLINA
+DIESEL
+ELECTRICO
+HIBRIDO
+GNC
+--
+-descripcion: String
+--
++getDescripcion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>955</y><w>190</w><h>120</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoAuto
+--
+SEDAN
+HATCHBACK
+SUV
+COUPE
+--
+-descripcion: String
+--
++getDescripcion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>725</x><y>940</y><w>190</w><h>120</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoMoto
+--
+SCOOTER
+DEPORTIVA
+TOURING
+ENDURO
+--
+-descripcion: String
+--
++getDescripcion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1140</x><y>1775</y><w>15</w><h>40</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>545</y><w>95</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;170;190</additional_attributes></element><element><id>Relation</id><coordinates><x>445</x><y>545</y><w>15</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>545</y><w>95</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>140</y><w>115</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;210;160</additional_attributes></element><element><id>Relation</id><coordinates><x>525</x><y>135</y><w>115</w><h>95</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>210;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>865</y><w>15</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>815</x><y>865</y><w>15</w><h>85</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>385</x><y>980</y><w>130</w><h>75</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+exportable
+--
++ toCSV(): String
++ getEncabezadoCSV(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>895</x><y>80</y><w>240</w><h>175</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ICrud&lt;T&gt;
+--
++ agregar(elemento: T): void
++ eliminar(elemento: T): void
++ actualizar(viejo: T, nuevo: T): void
++ buscar(patente: String): T
++ listar(): List&lt;T&gt;
++ cantidad(): int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>915</x><y>405</y><w>220</w><h>200</h></coordinates><panel_attributes>GestorVehiculos&lt;T&gt;
+&lt;&lt;T extends Vehiculo&gt;&gt;
+--
+vehiculos: List&lt;T&gt;
+--
++ GestorVehiculos()
++ agregar(vehiculo: T): void
++ agregarSeguro(vehiculo: T): void
++ eliminar(vehiculo: T): void
++ eliminarPorPatente(patente: String): void
++ actualizar(viejo: T, nuevo: T): void
++ buscar(patente: String): T
++ listar(): List&lt;T&gt;
++ cantidad(): int
++ ordenarNatural(): void
++ ordenarConComparator(comparator: Comparator&lt;T&gt;)
++ getIterador(): IteradorPersonalizado&lt;T&gt;
++ filtrar(criterio: Predicate&lt;T&gt;): List&lt;T&gt;
++ aplicarModificacion(modificacion: Consumer&lt;T&gt;)
++ convertirAStrings(converter: Function&lt;T,String&gt;)
++ incrementarAnio(cantidad: int): void
++ cambiarEstado(nuevoEstado: EstadoVehiculo): void
++ filtrarPorEstado(estado: EstadoVehiculo): List&lt;T&gt;
++ filtrarPorMarca(marca: String): List&lt;T&gt;
++ filtrarPorAnioMinimo(anioMin: int): List&lt;T&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>370</y><w>105</w><h>95</h></coordinates><panel_attributes>IteradorPersonalizado&lt;T&gt;
+--
+- lista: List&lt;T&gt;
+- posicion: int
+--
++ IteradorPersonalizado(List&lt;T&gt;)
++ hasNext(): boolean
++ next(): T
++ reset(): void
++ getPosicion(): int </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1025</x><y>250</y><w>15</w><h>165</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>445</x><y>865</y><w>15</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>865</y><w>180</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;230;340;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>865</y><w>185</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>350;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>425</y><w>145</w><h>65</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;270;110</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>135</y><w>225</w><h>280</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;430;540</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>495</y><w>295</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;570;70</additional_attributes></element></diagram>

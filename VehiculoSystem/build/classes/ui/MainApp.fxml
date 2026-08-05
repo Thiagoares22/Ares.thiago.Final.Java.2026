@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:controller="ui.MainController" prefHeight="720.0" prefWidth="1150.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox spacing="5.0" style="-fx-background-color: #2c3e50; -fx-padding: 12;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Sistema de Gestion de Vehiculos"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;" text="Sistema listo. Agregue vehiculos para comenzar."/>
+        </VBox>
+    </top>
+    <left>
+        <ScrollPane fitToWidth="true" prefWidth="350.0">
+            <VBox spacing="5.0" prefWidth="340.0" style="-fx-background-color: #ecf0f1; -fx-padding: 10;">
+                <Label style="-fx-font-size: 11px;" text="Tipo de Vehiculo:"/>
+                <ComboBox fx:id="cmbTipo" prefWidth="220.0"/>
+                <Label style="-fx-font-size: 11px;" text="Marca:"/>
+                <TextField fx:id="txtMarca" prefWidth="220.0" promptText="Ej: Toyota"/>
+                <Label style="-fx-font-size: 11px;" text="Modelo:"/>
+                <TextField fx:id="txtModelo" prefWidth="220.0" promptText="Ej: Corolla"/>
+                <Label style="-fx-font-size: 11px;" text="Anio:"/>
+                <TextField fx:id="txtAnio" prefWidth="220.0" promptText="Ej: 2023"/>
+                <Label style="-fx-font-size: 11px;" text="Patente:"/>
+                <TextField fx:id="txtPatente" prefWidth="220.0" promptText="Ej: ABC123"/>
+                <Label style="-fx-font-size: 11px;" text="Estado:"/>
+                <ComboBox fx:id="cmbEstado" prefWidth="220.0"/>
+                <Label style="-fx-font-size: 11px;" text="Combustible:"/>
+                <ComboBox fx:id="cmbCombustible" prefWidth="220.0"/>
+                <Label style="-fx-font-size: 11px;" text="Extra 1 (TipoAuto/Puertas/CapCarga/Cilindrada):"/>
+                <TextField fx:id="txtExtra1" prefWidth="220.0" promptText="Segun tipo"/>
+                <Label style="-fx-font-size: 11px;" text="Extra 2 (Puertas/Ejes/TipoMoto):"/>
+                <TextField fx:id="txtExtra2" prefWidth="220.0" promptText="Segun tipo"/>
+                <HBox spacing="8.0">
+                    <Button onAction="#agregarVehiculo" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;" text="Agregar"/>
+                    <Button onAction="#actualizarVehiculo" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-cursor: hand;" text="Actualizar"/>
+                    <Button onAction="#eliminarVehiculo" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-cursor: hand;" text="Eliminar"/>
+                    <Button onAction="#limpiarFormulario" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;" text="Limpiar"/>
+                </HBox>
+                <Separator/>
+                <Label style="-fx-font-size: 11px;" text="Ordenar por:"/>
+                <HBox spacing="8.0">
+                    <ComboBox fx:id="cmbOrdenar" prefWidth="140.0"/>
+                    <Button onAction="#ordenarVehiculos" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-cursor: hand;" text="Ordenar"/>
+                </HBox>
+                <Label style="-fx-font-size: 11px;" text="Filtrar:"/>
+                <HBox spacing="8.0">
+                    <ComboBox fx:id="cmbFiltrar" prefWidth="140.0"/>
+                    <Button onAction="#filtrarVehiculos" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-cursor: hand;" text="Filtrar"/>
+                </HBox>
+                <Separator/>
+                <Label style="-fx-font-size: 11px;" text="Funciones Funcionales:"/>
+                <Button onAction="#incrementarAnio" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-cursor: hand;" text="+1 Anio (Consumer)"/>
+                <Button onAction="#cambiarTodosADisponible" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-cursor: hand;" text="Todo DISPONIBLE (Consumer)"/>
+                <Button onAction="#mostrarResumen" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-cursor: hand;" text="Resumen (Function)"/>
+                <Button onAction="#iterarVehiculos" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-cursor: hand;" text="Iterator Personalizado"/>
+            </VBox>
+        </ScrollPane>
+    </left>
+    <center>
+        <VBox spacing="8.0" style="-fx-padding: 10;">
+            <TableView fx:id="tablaVehiculos">
+                <columns>
+                    <TableColumn fx:id="colTipo" prefWidth="65.0" text="Tipo"/>
+                    <TableColumn fx:id="colMarca" prefWidth="100.0" text="Marca"/>
+                    <TableColumn fx:id="colModelo" prefWidth="100.0" text="Modelo"/>
+                    <TableColumn fx:id="colAnio" prefWidth="60.0" text="Anio"/>
+                    <TableColumn fx:id="colPatente" prefWidth="80.0" text="Patente"/>
+                    <TableColumn fx:id="colEstado" prefWidth="110.0" text="Estado"/>
+                    <TableColumn fx:id="colCombustible" prefWidth="90.0" text="Combustible"/>
+                    <TableColumn fx:id="colImpuesto" prefWidth="90.0" text="Impuesto"/>
+                </columns>
+            </TableView>
+            <Separator/>
+            <HBox>
+                <VBox spacing="5.0">
+                    <Label style="-fx-font-weight: bold;" text="Persistencia:"/>
+                    <HBox spacing="8.0">
+                        <Button onAction="#guardarDAT" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Guardar .dat"/>
+                        <Button onAction="#cargarDAT" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Cargar .dat"/>
+                        <Button onAction="#guardarCSV" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Guardar CSV"/>
+                        <Button onAction="#cargarCSV" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Cargar CSV"/>
+                    </HBox>
+                    <HBox spacing="8.0">
+                        <Button onAction="#guardarJSON" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Guardar JSON"/>
+                        <Button onAction="#cargarJSON" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-cursor: hand;" text="Cargar JSON"/>
+                        <Button onAction="#exportarTXT" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-cursor: hand;" text="Exportar TXT"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
